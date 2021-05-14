@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles'
 const useStyles = makeStyles({
     root: {
         marginTop: '70px',
-        width: '60%',
+        // width: '60%',
         marginLeft: 'auto',
         marginRight: 'auto'
     }
@@ -14,10 +14,10 @@ export default function List({listArray}) {
     const classes = useStyles()
     // let array = [1,2,3,4]
     return(
-        <div className='list-section' className={classes.root}>
+        <div className={classes.root}>
             <ul>
                 {listArray.map(item => (
-                    <ListItem />
+                    <ListItem key={item} item={item}/>
                 ))}
             </ul>
         </div>
