@@ -1,6 +1,7 @@
 import React from 'react'
 import ListItem from './ListItem'
 import { makeStyles } from '@material-ui/core/styles'
+import PropTypes from 'prop-types'
 
 const useStyles = makeStyles({
     root: {
@@ -22,4 +23,12 @@ export default function List({listArray}) {
             </ul>
         </div>
     )
+}
+
+List.propTypes = {
+    listArray: PropTypes.array
+}
+
+List.defaultProps = {
+    listArray: []
 }

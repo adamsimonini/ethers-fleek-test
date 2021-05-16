@@ -4,11 +4,11 @@ import List from './components/List'
 
 
 function App() {
-  let array = [1,2,3,4,5,6,7,8,]
+  // let array = []
   return (
     <div className="App">
       <Navbar />
-      <List listArray={array} />
+      <List />
     </div>
   );
 }
