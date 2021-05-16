@@ -28,8 +28,30 @@ describe('Workshop Contract', function() {
         expect(w1.title).to.equal('workshop 1')
         expect(w1.author).to.equal('author 1')
     })
-    // it('Returns an array of workshops', async () => {
-    //     let workshopList = await contract.getWorkshops();
-    //     console.log(workshopList)
-    // })
+    it('Returns an array of workshops', async () => {
+
+        let title = 'workshop 1'
+        let author = 'author 1'
+
+        await contract.add(title, author)
+
+        let title2 = 'workshop 2'
+        let author2 = 'author 2'
+
+        await contract.add(title2, author2)
+
+        let workshopList = await contract.getWorkshops()
+
+        let w1 = workshopList[0]
+        let w2 = workshopList[1]
+
+        expect(w1.title).to.equal('workshop 1')
+        expect(w1.author).to.equal('author 1')
+
+        expect(w2.title).to.equal('workshop 2')
+        expect(w2.author).to.equal('author 2')
+
+        expect(workshopList.length).to.equal(2)
+
+    })
 })
