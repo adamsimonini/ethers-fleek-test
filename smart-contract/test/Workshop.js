@@ -23,13 +23,13 @@ describe('Workshop Contract', function() {
 
         await contract.add(title, author)
 
-        // let workshop1 = contract.workshops[1]
+        let w1 =  await contract.workshops(0)
 
-        // console.log(contract.workshops)
+        expect(w1.title).to.equal('workshop 1')
+        expect(w1.author).to.equal('author 1')
     })
-    it('Returns an array of workshops', async () => {
-
-        let workshopList = await contract.getWorkshops();
-        console.log(workshopList)
-    })
+    // it('Returns an array of workshops', async () => {
+    //     let workshopList = await contract.getWorkshops();
+    //     console.log(workshopList)
+    // })
 })

@@ -15,7 +15,7 @@ contract WorkshopManager {
         string author;
     }
 
-    Workshop[] workshops;
+    Workshop[] public workshops;
 
     function printName() public view returns (string memory) {
         return name;
