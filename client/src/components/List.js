@@ -11,13 +11,13 @@ const useStyles = makeStyles({
         marginRight: 'auto'
     }
 })
-export default function List({listArray}) {
+export default function List({listData}) {
     const classes = useStyles()
     // let array = [1,2,3,4]
     return(
         <div className={classes.root}>
             <ul>
-                {listArray.map(item => (
+                {listData.map(item => (
                     <ListItem key={item} item={item}/>
                 ))}
             </ul>
@@ -26,9 +26,9 @@ export default function List({listArray}) {
 }
 
 List.propTypes = {
-    listArray: PropTypes.array
+    listData: PropTypes.array
 }
 
 List.defaultProps = {
-    listArray: []
+    listData: []
 }
